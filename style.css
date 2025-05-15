@@ -76,4 +76,26 @@ footer {
     padding: 15px 0;
     margin-top: 40px;
 }
+.facts {
+    background-color: #eaf1f8;
+    border-left: 5px solid #003366;
+    padding: 20px;
+    margin: 30px auto;
+    border-radius: 5px;
+}
+
+.facts h3 {
+    color: #003366;
+    margin-bottom: 10px;
+}
+
+.facts ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.facts li {
+    margin: 10px 0;
+    font-size: 16px;
+}
 
