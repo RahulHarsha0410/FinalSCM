@@ -1,6 +1,6 @@
 /* Header Styles */
 header {
-  background-color: #fff;
+  background-color: #0f385f;
   padding: 20px 0;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
@@ -19,7 +19,7 @@ header {
 }
 
 header h1 {
-  color: #2c3e50;
+  color: #ffffff;
   font-size: 1.8rem;
   margin: 0;
 }
@@ -129,7 +129,7 @@ header h1 {
 
 /* Get In Touch Section - Modern Style */
 .contact-section {
-  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  background-color: #0f385f;
   padding: 80px 0;
   border-top: 1px solid #e0e0e0;
 }
@@ -146,14 +146,14 @@ header h1 {
 }
 
 .contact-header h2 {
-  color: #2c3e50;
+  color: #ffffff;
   font-size: 2.5rem;
   margin-bottom: 15px;
   font-weight: 700;
 }
 
 .contact-header p {
-  color: #7f8c8d;
+  color: #dce6f1;
   font-size: 1.2rem;
   max-width: 600px;
   margin: 0 auto;
@@ -275,8 +275,6 @@ header h1 {
   }
 }
 
-/* Add these new styles to your existing CSS */
-
 /* Social Media Card */
 .social-card {
   position: relative;
@@ -321,7 +319,6 @@ header h1 {
   box-shadow: 0 5px 10px rgba(0,0,0,0.1);
 }
 
-/* Social Media in CTA */
 .social-cta {
   margin-top: 30px;
   padding-top: 30px;
@@ -329,7 +326,7 @@ header h1 {
 }
 
 .social-cta p {
-  color: #7f8c8d;
+  color: #dce6f1;
   margin-bottom: 15px;
   font-size: 0.95rem;
 }
@@ -348,13 +345,98 @@ header h1 {
   height: 16px;
 }
 
-/* Responsive Adjustments */
 @media (max-width: 768px) {
   .social-icons {
     justify-content: center;
   }
-  
+
   .social-cta {
     text-align: center;
+  }
+}
+
+/* Footer */
+.site-footer {
+  background-color: #0f385f;
+  color: #ffffff;
+  text-align: center;
+  padding: 20px;
+  font-size: 0.95rem;
+}
+/* Video */
+.recruit-video {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.recruit-video iframe {
+  max-width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+@media (max-width: 768px) {
+  .why-recruit {
+    flex-direction: column;
+  }
+
+  .recruit-text,
+  .recruit-video {
+    padding: 0;
+  }
+
+  .recruit-video iframe {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.placement-highlight {
+  margin-top: 30px;
+}
+
+.placement-highlight h3 {
+  font-size: 1.5rem;
+  color: #2c3e50;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.placement-highlight ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  color: #7f8c8d;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.recruit-video {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.recruit-video iframe {
+  max-width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+@media (max-width: 768px) {
+  .why-recruit {
+    flex-direction: column;
+  }
+
+  .recruit-text,
+  .recruit-video {
+    padding: 0;
+  }
+
+  .recruit-video iframe {
+    width: 100%;
+    height: auto;
   }
 }
