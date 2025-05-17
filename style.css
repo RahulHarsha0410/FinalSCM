@@ -440,3 +440,57 @@ header h1 {
     height: auto;
   }
 }
+
+/* Trusted Companies Logo Slider */
+.slider-container {
+  overflow: hidden;
+  width: 100%;
+  background: #fff;
+  padding: 20px 0;
+}
+
+.logo-slider {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.slide-track {
+  display: flex;
+  animation: scroll 40s linear infinite;
+}
+
+.logo-wrapper {
+  padding: 10px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  flex-shrink: 0;
+  margin: 0 10px;
+  z-index: 1;
+  position: relative;
+}
+
+.logo-wrapper:hover {
+  transform: scale(1.05);
+  z-index: 2; /* Bring to front when hovered */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.logo-wrapper img {
+  max-height: 75px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
+
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
