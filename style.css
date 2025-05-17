@@ -92,3 +92,198 @@ footer {
     padding: 15px 0;
     margin-top: 40px;
 }
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.logo {
+  width: 120px;
+  margin-top: 10px;
+}
+
+header {
+  background-color: #002147;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+h2 {
+  color: #002147;
+}
+
+.why-recruit {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #f9f9f9;
+  padding: 40px;
+}
+
+.recruit-text {
+  flex: 1;
+  padding-right: 30px;
+}
+
+.recruit-text p {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.recruit-img {
+  flex: 1;
+  text-align: center;
+}
+
+.recruit-img img.rounded-img {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.highlight, .top-recruiters {
+  padding: 30px;
+}
+
+.top-recruiters ul {
+  list-style: none;
+  padding: 0;
+}
+
+.top-recruiters li {
+  margin-bottom: 20px;
+}
+
+.top-recruiters p {
+  margin: 5px 0 10px;
+}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+.big-heading {
+  font-size: 48px;
+  font-weight: 700;
+  color: #1e1e1e;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.subtext {
+  font-size: 20px;
+  color: #444;
+  font-weight: 400;
+  line-height: 1.6;
+  max-width: 700px;
+}
+
+.why-recruit {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #f9f9f9;
+  padding: 60px 40px;
+  gap: 40px;
+}
+
+.recruit-text {
+  flex: 1;
+}
+
+.recruit-img {
+  flex: 1;
+  text-align: right;
+}
+
+.recruit-img img.rounded-img {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 24px;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.1);
+}
+
+/* Get In Touch Section Styles */
+.contact-section {
+  background-color: #f8f9fa;
+  padding: 60px 0;
+  text-align: center;
+}
+
+.contact-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.contact-section h2 {
+  color: #2c3e50;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.contact-section p {
+  color: #7f8c8d;
+  font-size: 1.2rem;
+  margin-bottom: 40px;
+}
+
+.contact-methods {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.contact-method {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.contact-method img {
+  height: 24px;
+  width: auto;
+  filter: brightness(0) saturate(100%) invert(30%) sepia(99%) saturate(1554%) hue-rotate(336deg) brightness(89%) contrast(96%);
+}
+
+.contact-method p {
+  margin: 0;
+  font-size: 1rem;
+  color: #2c3e50;
+}
+
+.contact-button {
+  display: inline-block;
+  background-color: #e74c3c;
+  color: white;
+  padding: 12px 30px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  border: 2px solid #e74c3c;
+}
+
+.contact-button:hover {
+  background-color: transparent;
+  color: #e74c3c;
+}
+
+/* Arrow animation */
+.contact-button::after {
+  content: '→';
+  margin-left: 8px;
+  transition: transform 0.3s ease;
+}
+
+.contact-button:hover::after {
+  transform: translateX(5px);
+}
