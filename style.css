@@ -413,33 +413,104 @@ header h1 {
 .top-recruiters h2 {
   color: #2c3e50;
   font-size: 2rem;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
   text-align: center;
+  position: relative;
 }
 
-.top-recruiters ul {
-  list-style-type: none;
-  padding: 0;
+.top-recruiters h2::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background-color: #e74c3c;
+  border-radius: 2px;
 }
 
-.top-recruiters li {
+.companies-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.company-card {
   background-color: #fff;
-  padding: 25px;
-  margin-bottom: 20px;
-  border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
 }
 
-.top-recruiters strong {
+.company-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.logo-container {
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #eee;
+}
+
+.logo-container img {
+  max-height: 100px;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.company-info {
+  padding: 20px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.company-name {
   color: #e74c3c;
   font-size: 1.2rem;
+  margin-bottom: 10px;
+  font-weight: 600;
 }
 
-.top-recruiters p {
-  margin: 10px 0;
+.company-description {
   color: #7f8c8d;
+  font-size: 0.95rem;
+  margin-bottom: 10px;
+  flex-grow: 1;
 }
 
+.company-recruitment {
+  color: #2c3e50;
+  font-size: 0.9rem;
+  border-top: 1px dashed #eee;
+  padding-top: 10px;
+  font-style: italic;
+}
+
+@media (max-width: 992px) {
+  .companies-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .companies-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .top-recruiters {
+    padding: 40px 15px;
+  }
+}
 /* Get In Touch Section */
 .contact-section {
   background-color: #0f385f;
