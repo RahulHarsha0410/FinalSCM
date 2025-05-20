@@ -370,7 +370,7 @@ header h1 {
 
 .slide-track {
   display: flex;
-  animation: scroll 40s linear infinite;
+  animation: scroll 25s linear infinite;
 }
 
 .logo-wrapper {
