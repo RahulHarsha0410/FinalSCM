@@ -171,52 +171,108 @@ header h1 {
   z-index: 1;
 }
 
-/* Why Recruit Section */
+/* Updated Why Recruit Section */
 .why-recruit {
-  display: flex;
-  align-items: center;
-  padding: 60px 20px;
+  padding: 40px 20px 60px;
   max-width: 1200px;
   margin: 0 auto;
 }
 
+.recruit-content {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  padding: 40px;
+}
+
 .recruit-text {
-  flex: 1;
-  padding-right: 40px;
+  flex: 1.2;
 }
 
 .big-heading {
-  font-size: 2.5rem;
-  color: #2c3e50;
+  font-size: 2.8rem;
+  color: #ffffff;
   margin-bottom: 20px;
+  font-weight: 700;
+  line-height: 1.2;
+  position: relative;
+  padding-bottom: 15px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+.big-heading::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 80px;
+  height: 4px;
+  background-color: #e74c3c;
+  border-radius: 2px;
 }
 
 .subtext {
-  font-size: 1.2rem;
-  color: #7f8c8d;
-  line-height: 1.6;
+  font-size: 1.3rem;
+  color: #ffffff;
+  line-height: 1.7;
+  margin-bottom: 30px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+  max-width: 90%;
 }
 
-/* ... keep existing code (remaining styles) */
+/* Updated Placement Highlight */
 .placement-highlight {
   margin-top: 30px;
+  background-color: rgba(15, 56, 95, 0.8);
+  border-radius: 10px;
+  padding: 25px;
+  border-left: 5px solid #e74c3c;
+  backdrop-filter: blur(5px);
 }
 
 .placement-highlight h3 {
-  font-size: 1.5rem;
-  color: #2c3e50;
-  margin-bottom: 15px;
+  font-size: 1.6rem;
+  color: #ffffff;
+  margin-bottom: 20px;
   font-weight: 600;
+  text-align: center;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
 }
 
-.placement-highlight ul {
-  list-style-type: disc;
-  padding-left: 20px;
-  color: #7f8c8d;
-  font-size: 1.1rem;
-  line-height: 1.6;
+.highlight-stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
 }
 
+.stat-card {
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 15px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.stat-number {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #e74c3c;
+  margin-bottom: 5px;
+}
+
+.stat-label {
+  color: #455a64;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+/* Updated Video Section */
 .recruit-video {
   flex: 1;
   display: flex;
@@ -224,28 +280,76 @@ header h1 {
   align-items: center;
 }
 
-.recruit-video iframe {
-  max-width: 100%;
-  border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+.video-container {
+  width: 90%;
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+  border: 5px solid rgba(255, 255, 255, 0.8);
+  height: 0;
+  padding-bottom: 120%; /* Reduced from 177.78% to make video smaller */
+  max-width: 320px;
+  margin: 0 auto;
 }
 
-@media (max-width: 768px) {
-  .why-recruit {
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .recruit-content {
     flex-direction: column;
+    padding: 30px;
   }
-
-  .recruit-text,
-  .recruit-video {
-    padding: 0;
-  }
-
-  .recruit-video iframe {
+  
+  .recruit-text {
     width: 100%;
-    height: auto;
+  }
+  
+  .big-heading {
+    font-size: 2rem;
+  }
+  
+  .recruit-video {
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+  
+  .video-container {
+    max-width: 280px;
+    padding-bottom: 140%;
+  }
+  
+  .highlight-stats {
+    grid-template-columns: 1fr;
   }
 }
 
+@media (max-width: 576px) {
+  .recruit-content {
+    padding: 20px;
+  }
+  
+  .big-heading {
+    font-size: 1.8rem;
+  }
+  
+  .subtext {
+    font-size: 1.1rem;
+  }
+  
+  .placement-highlight {
+    padding: 15px;
+  }
+}
 /* Trusted Companies Logo Slider */
 .slider-container {
   overflow: hidden;
