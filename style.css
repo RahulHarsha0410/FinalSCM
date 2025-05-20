@@ -1,3 +1,89 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    /* ... keep existing code (dark theme variables) */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Reset default margins and padding */
+  html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+  
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  #root {
+    max-width: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
 /* Header Styles */
 header {
   background-color: transparent;
@@ -8,25 +94,53 @@ header {
 header .container {
   display: flex;
   align-items: center;
-  justify-content: flex-start; /* Ensures everything is aligned left */
+  justify-content: flex-start;
   padding: 20px;
 }
 
-
 .logo {
-  height: 80px;       /* Increase as needed */
-  margin-left: 0;     /* Push to extreme left */
-  margin-right: 20px; /* Optional spacing from the text */
+  height: 80px;
+  margin-left: 0;
+  margin-right: 20px;
   display: block;
 }
 
-
 header h1 {
   text-align: center;
-  font-family: Arial Black;
+  font-family: 'Arial Black', sans-serif;
   color: #ffffff;
   font-size: 1.8rem;
   margin: 0;
+}
+
+/* Background Wrapper */
+.background-wrapper {
+  background: linear-gradient(rgba(0, 13, 51, 0.6), rgba(0, 13, 51, 0.6)), 
+              url('campus.webp') no-repeat center center;
+  background-size: cover;
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.background-wrapper::before {
+  content: "";
+  position: absolute;
+  top: 0; 
+  left: 0; 
+  right: 0; 
+  bottom: 0;
+  background: rgba(15, 56, 95, 0.6);
+  z-index: 0;
+}
+
+.background-wrapper > * {
+  position: relative;
+  z-index: 1;
 }
 
 /* Why Recruit Section */
@@ -55,44 +169,106 @@ header h1 {
   line-height: 1.6;
 }
 
-.recruit-img {
-  flex: 1;
+/* ... keep existing code (remaining styles) */
+.placement-highlight {
+  margin-top: 30px;
 }
 
-.rounded-img {
-  width: 100%;
+.placement-highlight h3 {
+  font-size: 1.5rem;
+  color: #2c3e50;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.placement-highlight ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  color: #7f8c8d;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.recruit-video {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.recruit-video iframe {
+  max-width: 100%;
   border-radius: 10px;
   box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
-/* Highlight Section */
-.highlight {
-  background-color: #f8f9fa;
-  padding: 60px 20px;
-  max-width: 1200px;
-  margin: 0 auto;
+@media (max-width: 768px) {
+  .why-recruit {
+    flex-direction: column;
+  }
+
+  .recruit-text,
+  .recruit-video {
+    padding: 0;
+  }
+
+  .recruit-video iframe {
+    width: 100%;
+    height: auto;
+  }
 }
 
-.highlight h2 {
-  color: #2c3e50;
-  font-size: 2rem;
-  margin-bottom: 30px;
-  text-align: center;
+/* Trusted Companies Logo Slider */
+.slider-container {
+  overflow: hidden;
+  width: 100%;
+  background: #fff;
+  padding: 20px 0;
 }
 
-.highlight ul {
-  list-style-type: none;
-  padding: 0;
-  max-width: 800px;
-  margin: 0 auto;
+.logo-slider {
+  width: 100%;
+  display: flex;
+  align-items: center;
 }
 
-.highlight li {
-  background-color: #fff;
-  padding: 20px;
-  margin-bottom: 15px;
-  border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+.slide-track {
+  display: flex;
+  animation: scroll 40s linear infinite;
+}
+
+.logo-wrapper {
+  padding: 10px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  flex-shrink: 0;
+  margin: 0 10px;
+  z-index: 1;
+  position: relative;
+}
+
+.logo-wrapper:hover {
+  transform: scale(1.05);
+  z-index: 2;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.logo-wrapper img {
+  max-height: 75px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
 /* Top Recruiters Section */
@@ -132,7 +308,7 @@ header h1 {
   color: #7f8c8d;
 }
 
-/* Get In Touch Section - Modern Style */
+/* Get In Touch Section */
 .contact-section {
   background-color: #0f385f;
   padding: 80px 0;
@@ -269,17 +445,6 @@ header h1 {
   transform: translateX(3px);
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-  .contact-content {
-    flex-direction: column;
-  }
-  
-  .contact-info {
-    grid-template-columns: 1fr;
-  }
-}
-
 /* Social Media Card */
 .social-card {
   position: relative;
@@ -331,7 +496,7 @@ header h1 {
 }
 
 .social-cta p {
-  color: #dce6f1;
+  color: #7f8c8d;
   margin-bottom: 15px;
   font-size: 0.95rem;
 }
@@ -350,16 +515,6 @@ header h1 {
   height: 16px;
 }
 
-@media (max-width: 768px) {
-  .social-icons {
-    justify-content: center;
-  }
-
-  .social-cta {
-    text-align: center;
-  }
-}
-
 /* Footer */
 .site-footer {
   background-color: #0f385f;
@@ -368,156 +523,22 @@ header h1 {
   padding: 20px;
   font-size: 0.95rem;
 }
-/* Video */
-.recruit-video {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 
-.recruit-video iframe {
-  max-width: 100%;
-  border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-}
-
+/* Responsive designs */
 @media (max-width: 768px) {
-  .why-recruit {
+  .social-icons {
+    justify-content: center;
+  }
+
+  .social-cta {
+    text-align: center;
+  }
+  
+  .contact-content {
     flex-direction: column;
   }
-
-  .recruit-text,
-  .recruit-video {
-    padding: 0;
+  
+  .contact-info {
+    grid-template-columns: 1fr;
   }
-
-  .recruit-video iframe {
-    width: 100%;
-    height: auto;
-  }
-}
-
-.placement-highlight {
-  margin-top: 30px;
-}
-
-.placement-highlight h3 {
-  font-size: 1.5rem;
-  color: #2c3e50;
-  margin-bottom: 15px;
-  font-weight: 600;
-}
-
-.placement-highlight ul {
-  list-style-type: disc;
-  padding-left: 20px;
-  color: #7f8c8d;
-  font-size: 1.1rem;
-  line-height: 1.6;
-}
-
-.recruit-video {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.recruit-video iframe {
-  max-width: 100%;
-  border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-}
-
-@media (max-width: 768px) {
-  .why-recruit {
-    flex-direction: column;
-  }
-
-  .recruit-text,
-  .recruit-video {
-    padding: 0;
-  }
-
-  .recruit-video iframe {
-    width: 100%;
-    height: auto;
-  }
-}
-
-/* Trusted Companies Logo Slider */
-.slider-container {
-  overflow: hidden;
-  width: 100%;
-  background: #fff;
-  padding: 20px 0;
-}
-
-.logo-slider {
-  width: 100%;
-  display: flex;
-  align-items: center;
-}
-
-.slide-track {
-  display: flex;
-  animation: scroll 40s linear infinite;
-}
-
-.logo-wrapper {
-  padding: 10px;
-  background-color: #ffffff;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  flex-shrink: 0;
-  margin: 0 10px;
-  z-index: 1;
-  position: relative;
-}
-
-.logo-wrapper:hover {
-  transform: scale(1.05);
-  z-index: 2; /* Bring to front when hovered */
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-}
-
-.logo-wrapper img {
-  max-height: 75px;
-  width: auto;
-  object-fit: contain;
-  display: block;
-}
-
-
-@keyframes scroll {
-  0% {
-    transform: translateX(0%);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
-}
-.background-wrapper {
-  background: linear-gradient(rgba(0, 13, 51, 0.6), rgba(0, 13, 51, 0.6)), 
-              url('campus.webp') no-repeat center center;
-  background-size: cover;
-  width: 100%;
-  min-height: 100vh;  /* fills full height */
-  position: relative;
-}
-
-
-.background-wrapper::before {
-  content: "";
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(15, 56, 95, 0.6); /* transparent navy blue overlay */
-  z-index: -1;
-}
-
-.background-wrapper > * {
-  position: relative;
-  z-index: 1;
 }
