@@ -670,8 +670,13 @@ header h1 {
 }
 
 .social-icon {
+<<<<<<< HEAD
   width: 34px;
   height: 34px;
+=======
+  width: 38px;
+  height: 38px;
+>>>>>>> 9abf1215e90ed40dd4787c6996459ce93f531c7c
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -742,4 +747,7 @@ header h1 {
   .contact-info {
     grid-template-columns: 1fr;
   }
+<<<<<<< HEAD
+=======
 
+>>>>>>> 9abf1215e90ed40dd4787c6996459ce93f531c7c
