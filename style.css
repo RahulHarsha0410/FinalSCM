@@ -718,11 +718,11 @@ header h1 {
 
 /* Footer */
 .site-footer {
-  background-color: #0f385f;
-  color: #ffffff;
+  background-color: blue;
+  color: yellow;
   text-align: center;
-  padding: 20px;
-  font-size: 0.95rem;
+  padding: 24px;
+  font-size: 0.98rem;
 }
 
 /* Responsive designs */
